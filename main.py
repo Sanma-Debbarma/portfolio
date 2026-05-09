@@ -19,4 +19,8 @@ def contact():
     return render_template('index.html', section='contact')
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+      app.run(host="0.0.0.0", port=10000)
+>>>>>>> fdd74ab18ef506df5f17be7d6f808ff4d310ee06
