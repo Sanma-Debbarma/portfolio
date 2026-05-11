@@ -268,16 +268,18 @@ nav.scrolled {
 .shape {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-image: url('images/profile.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
     box-shadow: var(--shadow);
-    animation: morph 8s ease-in-out infinite;
+    border: 5px solid var(--primary-color);
+    transition: var(--transition);
 }
 
-@keyframes morph {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+.shape:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
 }
 
 /* --- About Section --- */
