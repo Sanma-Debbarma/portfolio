@@ -149,21 +149,4 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
 });
 
-// --- Contact Form ---
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('button');
-        const originalText = btn.textContent;
-        btn.textContent = 'Message Sent!';
-        btn.style.backgroundColor = 'var(--accent-color)';
-        btn.style.color = '#fff';
-        contactForm.reset();
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.backgroundColor = '';
-            btn.style.color = '';
-        }, 3000);
-    });
-}
+// Contact Form handling removed to allow real backend submission
