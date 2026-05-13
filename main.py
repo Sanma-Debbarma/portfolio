@@ -33,7 +33,7 @@ def contact():
             "phone": phone,
             "message": message
         }
-        .insert_one(send)
+        collection.insert_one(send)
 
     return render_template('index.html', section='contact')
 
