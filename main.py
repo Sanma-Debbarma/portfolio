@@ -4,7 +4,11 @@ import os
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey" # In production, use an environment variable
-MONGO_URI = os.getenv("mongodb+srv://lala:lalakicho@cluster0.1exk2c0.mongodb.net/?appName=Cluster0")
+MONGO_URI = os.environ.get("MONGO_URI")
+
+if not MONGO_URI:
+    raise Exception("MONGO_URI not found in environment variables")
+
 client = MongoClient(MONGO_URI)
 db = client["contact_db"]
 collection = db["contacts"]
