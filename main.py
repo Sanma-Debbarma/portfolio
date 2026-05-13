@@ -36,7 +36,7 @@ def contact():
             "message": message
         })
         flash("Message sent successfully!", "success")
-        return redirect(url_for('/'))
+        return redirect('/')
     return render_template('index.html', section='contact')
 
 if __name__ == '__main__':
