@@ -37,7 +37,7 @@ def contact():
         }
         collection.insert_one(send)
         flash("Message sent successfully!", "success")
-        return redirect(url_for('contact'))
+        return redirect(url_for('/'))
     return render_template('index.html', section='contact')
 
 if __name__ == '__main__':
