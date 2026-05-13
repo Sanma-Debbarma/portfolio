@@ -1,7 +1,9 @@
-from flask import Flask, render_template,request,redirect,url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
+app.secret_key = "supersecretkey" # In production, use an environment variable
 app.config['MONGO_URL'] = "mongodb+srv://lala:lalakicho@cluster0.1exk2c0.mongodb.net/?appName=Cluster0"
 client = MongoClient(app.config['MONGO_URL'])
 db = client["contact_db"]
@@ -34,6 +36,7 @@ def contact():
             "message": message
         }
         collection.insert_one(send)
+        flash("Message sent successfully!", "success")
         return redirect(url_for('contact'))
     return render_template('index.html', section='contact')
 

@@ -544,3 +544,29 @@ footer {
         margin-right: 1.5rem;
     }
 }
+/* --- Alerts/Flash Messages --- */
+.alert {
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    box-shadow: var(--shadow-hover);
+}
+
+.alert-success {
+    background-color: var(--accent-color);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.alert-error {
+    background-color: #ef4444;
+    color: white;
+}
