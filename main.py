@@ -22,7 +22,7 @@ def projects():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        name = request.form.GET("name")
+        name = request.form.get("name")
         email = request.form.get("email")
         phone = request.form.get("phone")
         message = request.form.get("message")
@@ -34,7 +34,7 @@ def contact():
             "message": message
         }
         collection.insert_one(send)
-
+        return redirect(url_for('contact'))
     return render_template('index.html', section='contact')
 
 if __name__ == '__main__':
