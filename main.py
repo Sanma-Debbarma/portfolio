@@ -29,13 +29,12 @@ def contact():
         phone = request.form.get("phone")
         message = request.form.get("message")
 
-        send = {
+        collection.insert_one({
             "name": name,
             "email": email,
             "phone": phone,
             "message": message
-        }
-        collection.insert_one(send)
+        })
         flash("Message sent successfully!", "success")
         return redirect(url_for('/'))
     return render_template('index.html', section='contact')
